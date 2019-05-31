@@ -1,0 +1,57 @@
+#include <iostream>
+#include <windows.h>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    string arr[10]={"Авс", "Гер", "Кан", "Кит", "Кор", "Нор", "Рос", "США", "Фин", "Япо"};
+    string ar,pok;
+    int arrq[10][3];
+
+    int arr1[10], x=0;
+
+    for(int i=0; i<10; i++)
+    {
+        cout<<arr[i]<<":  ";
+        for(int lop=0; lop<3; lop++)
+        {
+            cin>>arrq[i][lop];
+        }
+
+
+        x=arrq[i][0]*7 + arrq[i][1]*6 + arrq[i][2]*5;
+        arr1[i]=x;
+        x=0;
+    }
+
+    for(int i=0, kirik=0, pidor=0; i<10; i++)
+    {
+        for(int q=0; q<10; q++)
+        {
+            if(arr1[i]>arr1[q])
+            {
+                kirik=arr1[i];
+                pidor=arr1[q];
+                arr1[i]=pidor;
+                arr1[q]=kirik;
+
+                ar=arr[i];
+                pok=arr[q];
+                arr[i]=pok;
+                arr[q]=ar;
+            }
+
+        }
+    }
+
+    
+    cout<<"Итоги зимней олимпиады в Нагано, 1988 г.\n№  Страна\t Золото\t Серебро\t Бронза\t Очков\n";
+    for(int i=0; i<10; i++)
+    {
+        cout<< i+1 <<"  "<<arr[i]<<"       \t"<<arrq[i][0]<<"\t     "<<arrq[i][1]<< "\t       " <<arrq[i][2]<<"\t       "<<arr1[i]<<endl;
+    }
+    return 0;
+}

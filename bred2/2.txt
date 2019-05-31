@@ -1,0 +1,13 @@
+#include "pch.h"
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	system("color 18");
+	cout << "Дмитрий - красавчик, Димочка - модник!\nДима - для каждой дамы угодник!\nДима талантлив во всем и всегда!\nК Диме стримится подруги, друзья!\n\n\n\n";
+
+	return 0;
+}

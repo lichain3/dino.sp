@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int k, s;
+
+    cout << "Введите 2 числа";
+
+    cin >> k >> s;
+
+
+    cout << "Произведение: " << k * s << endl;
+    cout << "Сумма: " << k + s << endl;
+    cout << "Разность: " << k - s << endl;
+
+
+return 0;
+}

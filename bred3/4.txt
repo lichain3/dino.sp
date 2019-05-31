@@ -1,0 +1,30 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+void addRightDigit(int d, int &k)
+{
+	k = k*10 + d;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int d, k, i=0;
+	cout << "k = ";
+	cin >> k;
+	do
+	{
+		cout << "\nd = ";
+		cin >> d;
+		if (d < 10 && d >= 0)
+		{
+			addRightDigit(d, k);
+			cout << "\nk = " << k;
+			i++;
+		}
+		else
+			cout << "error";
+	} while (i < 2);
+	return 0;
+}

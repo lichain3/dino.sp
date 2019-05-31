@@ -1,0 +1,26 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    double x=0.0, q=-1.0;
+    int i;
+
+    do
+    {
+        cin >> i;
+        x += i;
+        q++;
+    } while (i != 0);
+
+
+    system("cls");
+
+    cout << "Общая сумма чисел:  " << x << endl;
+    cout << "Всего было введено: " << q << endl;
+    cout << "\nСреднее арифметическое: " << x / q << endl;
+
+    return 0;
+}

@@ -1,0 +1,21 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    double towar = 0.0 , res = 0.0 ;
+
+do
+{
+    cout << "Для выхода набирите: 2409867" << endl;
+    cout << res << "+" << "Цена:\n" << endl;
+    cin >> towar;
+
+    if (towar != 2409867)
+        res += towar;
+        system("cls");
+} while (towar != 2409867);
+return 0;
+}

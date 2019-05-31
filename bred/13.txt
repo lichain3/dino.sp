@@ -1,0 +1,54 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+int main()
+{
+    int arr[3][3];
+    int sum[6];
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int q = 0; q < 3; q++)
+        {
+            cin >> arr[i][q];
+        }
+
+    }
+
+    for (int uk, ru, i = 0 ; i < 3; i++)
+    {
+        uk = 0;
+        ru = 0;
+        for (int a = 0; a < 3; a++)
+        {
+            uk += arr[i][a];
+            ru += arr[a][i];
+        }
+
+        sum[i] = uk;
+        sum[i + 3] = ru;
+    }
+    system("cls");
+
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int a = 0; a < 3; a++)
+        {
+            cout << "  " << arr[i][a];
+        }
+        cout << "  " << sum[i] << endl;
+
+        if (i == 2)
+        {
+            for (int a = 3; a < 6; a++)
+            {
+                cout << "  " << sum[a];
+            }
+        }
+    }
+
+
+    return 0;
+}

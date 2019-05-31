@@ -1,0 +1,30 @@
+#include "pch.h"
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <locale>
+
+using namespace std;
+
+int main()
+{
+
+	setlocale(LC_ALL, "Russian");
+	srand((unsigned)time(NULL));
+	int N;
+	cout << "Введите размерность массива:" << endl;
+	cout << "N = ";
+	cin >> N;
+	int* A = new int[N];
+	int* ptr = A; //Объявляем указатель на массив
+	cout << "Случайный массив [-100, 100]:" << endl;
+	for (int i = 0; i < N; i++)
+	{
+		A[i] = -100 + (rand() % 201); //Заполняем массив случайными числами
+		cout << *(ptr + i) << " "; //Выводим массив с помощью указателя
+	}
+	cout << endl;
+	delete[] A;
+	system("pause");
+	return 0;
+}

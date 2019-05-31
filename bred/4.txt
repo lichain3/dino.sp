@@ -1,0 +1,36 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    int i;
+    char x;
+    string k;
+    double o;
+
+    cout << "¬ведите свой возраст: " << endl;
+    cin >> i;
+
+    cout << "¬ведите свой любимый символ: " << endl;
+    cin >> x;
+
+    cout << "¬ведите свое им€: " << endl;
+    cin >> k;
+
+    cout << "¬ведите мес€ц и день рождени€: " << endl;
+    cin >> o;
+
+    system("cls");
+
+
+    cout << "¬аш возраст: " << i << endl;
+    cout << "¬аш любимый символ" << x << endl;
+    cout << "¬аше им€" << k << endl;
+    cout << "¬аш мес€ц и день рождени€" << o << endl;
+
+
+return 0;
+}

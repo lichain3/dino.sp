@@ -1,0 +1,107 @@
+// ConsoleApplication14.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+
+#include "pch.h"
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class B {
+private:
+	int kol;
+	int dlin;
+public:
+	B(){
+		cout << "Kol = ";
+		cin >> kol;
+		cout << "dlin = ";
+		cin >> dlin;
+	}
+
+	string* strin = new string[kol];
+
+	void setB()
+	{
+		cout << kol;
+		int ass;
+		do {
+			cout << "Nomer str:\t";
+			cin >> ass;
+			ass--;
+			if (ass < kol && ass >= 0)
+			{
+				cout << "Vvedite str:\t";
+				cin >> strin[ass];
+			}
+			else if (ass != 9998)
+				cout << "ERROR\n";
+		} while (ass != 9998);
+	};
+
+	void delB()
+	{
+		for (int i = 0; i < kol; i++)
+		{
+			string Del_Strin = "";
+			for (int kyi = 0; kyi < dlin; kyi++)
+				Del_Strin += strin[i][kyi];
+
+			strin[i] = Del_Strin;
+		}
+	}
+
+
+	void getB()
+	{
+		int hol;
+		do {
+			cout << "Vveditestroke dlya vivoda:\t";
+			cin >> hol;
+			hol--;
+		} while (hol > dlin && hol != 9998 || hol < 0 && hol != 9998);
+
+		if (hol == 9998)
+		{
+			for (int i = 0; i < kol; i++)
+			{
+				cout << strin[i]<<endl;
+			}
+		}
+		else
+		{
+			cout << strin[hol];
+		}
+	}
+
+
+	void concon()
+	{
+		int lox[2];
+		do {
+			cout << "\nobed 1:\t";
+			cin >> lox[0];
+			cout << "obed 2:\t";
+			cin >> lox[1];
+			lox[0]--;
+			lox[1]--;
+		} while (lox[0] <0 || lox[0] > dlin || lox[1] < 0 || lox[0] > dlin);
+
+		strin[lox[0]] += " ";
+		strin[lox[0]] += strin[lox[1]];
+		strin[lox[1]] = "";
+		cout << 1246;
+	}
+
+};
+
+int main()
+{
+	B obj;
+	obj.setB();
+	obj.delB();
+	obj.getB();
+	obj.concon();
+	obj.getB();
+	return 0;
+}

@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int k;
+
+    cin >> k;
+
+
+    cout << "\n" << k % 10;
+    k /= 10;
+    cout << k % 10;
+    k /= 10;
+
+    cout << k % 10;
+    k /= 10;
+    cout << k % 10;
+
+
+return 0;
+}

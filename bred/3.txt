@@ -1,0 +1,23 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    int i, x, f;
+
+
+    cin >> i;
+    x = i + 3;
+    f = i + x;
+    system("cls");
+
+    cout << "Первая переменная   " << i << endl;
+    cout << "Вторая переменная   " << x << endl;
+    cout << "Третья переменная   " << f << endl;
+
+
+return 0;
+}

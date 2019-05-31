@@ -1,0 +1,41 @@
+#include "pch.h"
+#include <iostream>
+#include <conio.h> 
+#include <math.h> 
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	string arr[7] = { "Понидельник", "Вторник","Среда","Четверг","Пятница","Суббота","Воскрисенье" };
+	int d = 10, m = 1, g = 2018, c, nid;
+
+	cout << "Введите день";
+	cin >> d;
+	cout << "Введите месяц";
+	cin >> m;
+	cout << "Введите год";
+	cin >> g;
+
+	if (m < 3)
+	{
+		m += 10;
+		g--;
+	}
+	else
+		m -= 2;
+
+
+
+	c = g / 100;
+	g = g % 100;
+
+
+	nid = (d + ((13 * m) - 1) / 5 + g + (g / 4) + (c / 4) - (2 * c) + 777) % 7;
+
+	cout << arr[nid-1];
+
+
+	return 0;
+}

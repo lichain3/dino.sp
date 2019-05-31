@@ -1,0 +1,62 @@
+#include "pch.h"
+#include "fstream"
+#include <iostream>
+using namespace std;
+
+class rab
+{
+public:
+	string fam;
+	int staj;
+	double time;
+	double otime;
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	ofstream file;
+	file.open("C:\\1\\rab.txt", ios::app);
+
+	rab sfq;
+	double prem, zarp, viplota;
+
+
+	cout << "ФИО сторудника: ";
+	cin >> sfq.fam;
+
+	cout << "Стаж сотрудника: ";
+	cin >> sfq.staj;
+
+	cout << "Часавая зароботная плата: ";
+	cin >> sfq.time;
+
+	cout << "Кол-во отработанных часов: ";
+	cin >> sfq.otime;
+
+	zarp = sfq.time * sfq.otime;
+
+	if (sfq.staj < 36 && sfq.staj>12)
+	{
+		prem = zarp / 20;
+	}
+
+	if (sfq.staj < 60 && sfq.staj>36)
+	{
+		prem = zarp / 12.5;
+	}
+
+	if (sfq.staj > 60)
+	{
+		prem = zarp * 0.15;
+	}
+
+	viplota = zarp + prem;
+
+	cout << "\nЗарплата: " << zarp << "\nПремия: " << prem << "\nОбщая сумма выплоты: " << viplota;
+
+	file << "ФИО сторудника: " << sfq.fam << "\nСтаж сотрудника: " << sfq.staj << "\nЧасавая зароботная плата: " << sfq.time << "\nКол-во отработанных часов: " << "\nЗарплата: " << zarp << "\nПремия: " << prem << "\nОбщая сумма выплоты: " << viplota;
+
+	file.close;
+	return 0;
+}

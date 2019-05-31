@@ -1,0 +1,50 @@
+#include "pch.h"
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int ch, koi = 2, m;
+	cout << "¬ведите число: ";
+	cin >> ch;
+	int arr[ch];
+	for (int i = 0; i < ch; i++)
+	{
+		arr[i] = i + 1;
+	}
+
+
+	do
+	{
+		int qqq = koi;
+		for (int i = koi+1; i < ch; i++)
+		{
+			if (arr[i] != 0)
+			{
+				if ((arr[i] % koi) == 0)
+				{
+					arr[i] = 0;
+				}
+			}
+		}
+
+		for(int i=qqq; i<ch; i++)
+		{
+			if (arr[i] != 0)
+			{
+				koi = arr[i];
+				i = 100;
+			}
+		}
+
+	} while (pow(koi, 2) < ch);
+
+	for (int i = 0; i < ch; i++)
+	{
+		if (arr[i] != 0)
+			cout << arr[i] << "\n";
+	}
+	return 0;
+}

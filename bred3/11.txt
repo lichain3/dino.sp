@@ -1,0 +1,81 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Product {
+public:
+    string Name;    //Имя
+    float Price;    //Цена
+    float Ves;      //Вес
+
+};
+
+class Buy: public Product{
+public:
+    int Kol;        //Кол проданного товара
+    float VPB;        //Выручка за товар
+    float VV;       //Вес
+
+};
+
+class Check: public Product{
+public:
+    int pop = 2;
+    Buy  wq[2];
+
+
+    void Cin(){
+        int l;
+        cout<<"1.avto, droogor";
+        cin>>l;
+        if( l == 1)
+        {
+            wq[0].Name = "Apple";
+            wq[0].Price = 43.45;
+            wq[0].Ves = 1.325;
+            wq[0].Kol = 3;
+
+            wq[1].Name = "Oranje";
+            wq[1].Price = 96.5;
+            wq[1].Ves = 3.25;
+            wq[1].Kol = 9;
+
+        }
+        else{
+            for(int i = 0; i < pop; i++)
+            {
+                cout<<i+1<<". Vveditre Name:\t\t";      cin >> wq[i].Name;
+                cout<<"Cena:\t\t";      cin>>wq[i].Price;
+                cout<<"Ves:\t\t";       cin>>wq[i].Ves;
+                cout<<"Kol:\t\t";       cin>>wq[i].Kol;
+            }
+        }
+    }
+
+
+    void Cout(){
+        for (int i=0; i < pop; i++)
+        {
+            wq[i].VPB = wq[i].Price * wq[i].Kol;
+            wq[i].VV = wq[i].Kol * wq[i].Ves;
+            cout<<i+1<<". Name\t\t"<<wq[i].Name;
+            cout<<"\nCena:\t\t"<<wq[i].Price;
+            cout<<"\nVes:\t\t"<<wq[i].Ves;
+            cout<<"\nKol:\t\t"<<wq[i].Kol;
+            cout<<"\nVeroochka\t\t\t"<<wq[i].VPB;
+            cout<<"\nObchi Ves\t\t\t"<<wq[i].VV<<"\n\n\n";
+        }
+
+
+
+    }
+};
+
+int main()
+{
+	Check pob;
+	pob.Cin();
+	pob.Cout();
+	return 0;
+}

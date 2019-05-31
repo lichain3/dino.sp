@@ -1,0 +1,24 @@
+#include "pch.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	double param, a, b, ot;
+	double PI = 3.14159265;
+
+	cout << "Сторона a = ";
+	cin >> a;
+	cout << "Сторона b = ";
+	cin >> b;
+	cout << "Угол = ";
+	cin >> param;
+	
+	ot = (a*b / 2)*sin(param * PI / 180);
+	cout<<"S ="<<ot;
+	return 0;
+}

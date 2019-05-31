@@ -1,0 +1,56 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+  string Stroka = "Dani ds n Dimfdhdfjh n DA n 1516-2";
+  int x=0, y=0, z=0, p=1;//x - количество символов, у- номер слова, z- кол-во символов в данном слове
+
+  cout<<Stroka;
+
+  cout << "\n\n\n\n";
+
+  for(int i =0; Stroka[i] != '\0'; i++)
+  {
+      if(Stroka[i] == 'n' && int{Stroka[i-1]} == 32)
+        {
+            i+=2;
+            cout<<endl;
+        }
+    cout << Stroka[i];
+  }
+
+  for(int i=0; Stroka[i] != '\0'; i++)
+  {
+      if(Stroka[i]!=' ')
+        z++;
+      if(Stroka[i+1] == ' ')
+      {
+          if(Stroka[i+2] != 'n')
+         {
+             if(z>x)
+             {
+                x=z;
+                y=p;
+             }
+             p++;
+             z=0;
+         }
+       }
+  }
+  cout<<"\n\n\n";
+
+
+  for(int i=0, q=1; Stroka[i] != '\0';i++)
+  {
+      if(Stroka[i]==' ' && Stroka[i+1] != 'n')
+       q++;
+      if(q == y && Stroka[i] != ' ')
+        {cout<<Stroka[i];
+        if(Stroka[i+1] == ' ')
+            break;
+        }
+  }
+  }

@@ -1,0 +1,153 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+{
+setlocale(LC_ALL, "rus");
+int rows;
+int columns;
+int rows_second;
+int columns_second;
+
+////////////////////////////////////////////////////////////////////
+////// First Matrix ////////
+////////////////////////////////////////////////////////////////////
+
+cout << "[Введите параметры первой матрицы] \nСтроки : ";
+cin >> rows;
+cout << "Стобцы : ";
+cin >> columns;
+cout << endl;
+
+int **arr = new int* [rows];
+for (size_t i = 0; i < rows; i++)
+{
+arr[i] = new int[columns];
+}
+for (size_t i = 0; i < rows; i++)
+{
+for (size_t j = 0; j < columns; j++)
+{
+arr[i][j] = rand() % 5;
+}
+}
+for (size_t i = 0; i < rows; i++)
+{
+cout << "\t";
+for (size_t j = 0; j < columns; j++)
+{
+cout << arr[i][j] << "\t";
+}
+cout << endl;
+}
+cout << endl;
+
+////////////////////////////////////////////////////////////////////
+////// Second Matrix ////////
+////////////////////////////////////////////////////////////////////
+
+cout << "[Введите параметры второй матрицы] \nСтроки : ";
+cin >> rows_second;
+cout << "Столбцы : ";
+cin >> columns_second;
+cout << endl;
+
+int **arr_second = new int*[rows_second];
+for (size_t i = 0; i < rows_second; i++)
+{
+arr_second[i] = new int[columns_second];
+}
+for (size_t i = 0; i < rows_second; i++)
+{
+for (size_t j = 0; j < columns_second; j++)
+{
+arr_second[i][j] = rand() % 5;
+}
+}
+for (size_t i = 0; i < rows_second; i++)
+{
+cout << "\t";
+for (size_t j = 0; j < columns_second; j++)
+{
+cout << arr_second[i][j] << "\t";
+}
+cout << endl;
+}
+cout << endl;
+
+////////////////////////////////////////////////////////////////////
+////// Summary ////////
+////////////////////////////////////////////////////////////////////
+
+cout << "[Сложение возможно только при одинаковых размерах матриц]" << endl;
+cout << "[Результат сложения]:" << endl;
+
+if ((rows == rows_second) && (columns == columns_second))
+{
+for (size_t i = 0; i < rows_second; i++)
+{
+cout << "\t";
+for (size_t j = 0; j < columns_second; j++)
+{
+cout << arr_second[i][j] + arr[i][j] << "\t";
+}
+cout << endl;
+}
+cout << endl;
+}
+else
+{
+cout << "[Операция невозможна , матрицы имеют разные размеры]" << endl << endl;
+}
+
+////////////////////////////////////////////////////////////////////
+////// Miltiplication ////////
+////////////////////////////////////////////////////////////////////
+
+cout << "[Умножение возможно, если число стобцов первой матрицы равно числу строк второй]" << endl;
+cout << "[Результат умножения]:" << endl<<endl;
+if (columns==rows_second)
+{
+for (size_t i = 0; i < rows; i++)
+{
+for (size_t ix = 0; ix < columns_second; ix++)
+{
+
+int res = 0;
+cout << "\t";
+
+for (size_t j = 0; j < columns; j++)
+{
+res = res + ((arr[i][j]) * (arr_second[j][ix]));
+}
+
+cout << res << "\t";
+}
+cout << endl;
+}
+cout << endl;
+}
+else
+{
+cout << "[Операция невозможна , условия не соблюдены]" << endl << endl;
+}
+
+////////////////////////////////////////////////////////////////////
+////// Clear Memory ////////
+////////////////////////////////////////////////////////////////////
+
+for (size_t i = 0; i < rows; i++)
+{
+delete[] arr[i];
+}
+delete[] arr;
+
+for (size_t i = 0; i < rows_second; i++)
+{
+delete[] arr_second[i];
+}
+delete[] arr_second;
+
+return 0;
+}

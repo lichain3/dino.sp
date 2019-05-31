@@ -1,0 +1,42 @@
+#include "pch.h"
+#include <iostream>
+#include <stdio.h>
+#include <Windows.h>// Обязательное подключение файла
+enum ConsoleColor {
+	Black = 0,
+	Blue = 1,
+	Green = 2,
+	Cyan = 3,
+	Red = 4,
+	Magenta = 5,
+	Brown = 6,
+	LightGray = 7,
+	DarkGray = 8,
+	LightBlue = 9,
+	LightGreen = 10,
+	LightCyan = 11,
+	LightRed = 12,
+	LightMagenta = 13,
+	Yellow = 14,
+	White = 15
+};
+int main() {
+	setlocale(LC_ALL, "Russian");
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, (WORD)((Black) | Red));
+	printf("Каждый ");
+	/*Цвет символов - светло-зеленый. Цвет фона - желтый*/
+	SetConsoleTextAttribute(hConsole, (WORD)((Black) | LightRed));
+	puts("охотник ");
+	SetConsoleTextAttribute(hConsole, (WORD)((Black) | Yellow));
+	puts("желает ");
+	SetConsoleTextAttribute(hConsole, (WORD)((Black) | Green));
+	puts("знать ");
+	SetConsoleTextAttribute(hConsole, (WORD)((Black) | LightBlue));
+	puts("где ");
+	SetConsoleTextAttribute(hConsole, (WORD)((Black) | Blue));
+	puts("сидит ");
+	SetConsoleTextAttribute(hConsole, (WORD)((Black) | Cyan));
+	puts("фазан ");
+	return 0;
+}

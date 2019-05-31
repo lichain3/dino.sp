@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int k, l, p, r;
+
+    cout << "Введите значения:";
+    cin >> k >> l;
+
+    cout << "Результат умножения первого числа на второе:";
+        cin >> p;
+        r = l * k;
+
+        if (r == p)
+            cout << "\n Молодец, ты ответил правельно";
+
+        else
+            cout << "\n Ответ не верный, правильный ответ:" << r;
+
+return 0;
+}

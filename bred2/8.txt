@@ -1,0 +1,53 @@
+#include <iostream>
+#include <windows.h>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    int x,qw=0;
+
+    cin>>x;
+
+    int arr[x][x], arrq[x*2];
+
+    for (int i = 0; i < x; i++)
+    {
+        for (int q = 0; q < x; q++)
+        {
+            cin >> arr[i][q];
+        }
+
+    }
+
+    for (int uk, ru, i = 0 ; i < x; i++)
+    {
+        uk = 0;
+        ru = 0;
+        for (int a = 0; a < x; a++)
+        {
+            uk += arr[i][a];
+            ru += arr[a][i];
+        }
+
+        arrq[i] = uk;
+        arrq[i + x] = ru;
+    }
+
+    system("cls");
+
+    for(int i=0; i<x*2; i++)
+    {
+        if(arrq[0]!=arrq[i])
+            qw=1;
+
+    }
+
+    if(qw == 0)
+        cout<<"\n Магический";
+
+    else cout<<"\n Не магический";
+
+    return 0;
+}
